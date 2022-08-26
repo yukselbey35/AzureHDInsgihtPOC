@@ -1,0 +1,13 @@
+Configure the ansible User on the Control Node
+Next, we'll configure the ansible user on the control node for ssh shared key access to managed nodes.
+
+Note: Do not use a passphrase for the key pair.
+
+Create a key pair for the ansible user on the control host, accepting the defaults when prompted:
+
+sudo su - ansible
+ssh-keygen
+Copy the public key to both node1 and node2:
+
+ssh-copy-id node1
+ssh-copy-id node2
