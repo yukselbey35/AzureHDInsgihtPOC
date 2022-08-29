@@ -1,0 +1,31 @@
+#Azure CLI Commands
+az group list #  list the resource groups available in our Azure subscription
+az storage account list  #List the storage accounts available in our Azure subscription
+az vm list 
+az vm create 
+
+
+#Creating Azure VM in resource group with name is LabVm image is UbuntuLTS, admin user name is azureuser and create ssh keys and 
+# save it in storage account /home/cloud.ssh/id_rsa 
+#the key stored in ephemeral storage because cloudshell storage is ephemeral we need to save somewhere else
+
+#
+
+```
+az vm create `
+ --name LabVm `
+ --resource-group 72-a997bea5-accessing-and-using-the-azure-cloud-sh `
+ --image UbuntuLTS `
+ --admin-username azureuser ` 
+ --generate-ssh-keys
+```
+
+
+
+#PowerShell Commands
+Get-AzResourceGroup
+Get-AzStorageAccount
+Get-AzVM
+Get-AzResource | ft # Get all the information or resourse under the resource group
+Remove-AzVM
+Remove-AzVM -Name LabVM -ResourceGroupName 72-a997bea5-accessing-and-using-the-azure-cloud-sh
