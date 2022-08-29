@@ -25,3 +25,8 @@ all:
       hosts:
         node[2:6].myserver.com
   
+#Creating Dynamic inventory
+# Use chmod +x dynamic.sh to make executable file
+$. dynamic.sh --list
+$ansible all -i dynamic.sh -m ping
+
