@@ -11,3 +11,17 @@ Copy the public key to both node1 and node2:
 
 ssh-copy-id node1
 ssh-copy-id node2
+
+#Created inventory file.
+all:
+  hosts:
+    node1.myserver.com
+  children: # allow us to create groups under all 
+    httpd: #created the httpd group so we can run with ansible command => ansible httpd -i inventory.yaml 
+      hosts:
+        node2.myserver.com
+        node3.myserver.com
+    labservers: # ansible -i inv.yaml labservers -m setup
+      hosts:
+        node[2:6].myserver.com
+  
